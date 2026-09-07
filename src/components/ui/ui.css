@@ -88,49 +88,6 @@
   font-size: 18px;
 }
 
-/* Badge styles */
-.ui-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2px 8px;
-  font-size: 12px;
-  font-weight: 600;
-  border-radius: 9999px;
-  line-height: 1.25;
-}
-
-.ui-badge-primary {
-  background-color: var(--accent-bg);
-  color: var(--accent);
-  border: 1px solid var(--accent-border);
-}
-.ui-badge-secondary {
-  background-color: var(--bg-secondary);
-  color: var(--text);
-  border: 1px solid var(--border);
-}
-.ui-badge-outline {
-  background-color: transparent;
-  color: var(--text);
-  border: 1px solid var(--border);
-}
-.ui-badge-success {
-  background-color: rgba(16, 185, 129, 0.1);
-  color: #10b981;
-  border: 1px solid rgba(16, 185, 129, 0.3);
-}
-.ui-badge-warning {
-  background-color: rgba(245, 158, 11, 0.1);
-  color: #f59e0b;
-  border: 1px solid rgba(245, 158, 11, 0.3);
-}
-.ui-badge-danger {
-  background-color: rgba(239, 68, 68, 0.1);
-  color: #ef4444;
-  border: 1px solid rgba(239, 68, 68, 0.3);
-}
-
 /* Input & Select styles */
 .ui-field-group {
   display: flex;

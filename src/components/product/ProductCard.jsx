@@ -1,5 +1,4 @@
 import React from 'react';
-import Badge from '../ui/Badge';
 import Button from '../ui/Button';
 
 /**
@@ -12,7 +11,6 @@ import Button from '../ui/Button';
  */
 export default function ProductCard({ product, onViewDetail, onBook }) {
   const {
-    id,
     name,
     brand,
     capacity,
@@ -20,8 +18,7 @@ export default function ProductCard({ product, onViewDetail, onBook }) {
     fuelType,
     status,
     priceDay,
-    priceMonth,
-    imageCode
+    priceMonth
   } = product;
 
   // Render a clean forklift silhouette using SVG instead of AI gradients or unreliable links
@@ -59,15 +56,6 @@ export default function ProductCard({ product, onViewDetail, onBook }) {
         </svg>
         <span style={{
           position: 'absolute',
-          top: '10px',
-          left: '10px'
-        }}>
-          <Badge variant={status === 'Tersedia' ? 'outline' : 'warning'}>
-            {status}
-          </Badge>
-        </span>
-        <span style={{
-          position: 'absolute',
           bottom: '10px',
           right: '10px',
           fontSize: '11px',
@@ -79,15 +67,6 @@ export default function ProductCard({ product, onViewDetail, onBook }) {
         </span>
       </div>
     );
-  };
-
-  const getStatusLabel = () => {
-    switch (status) {
-      case 'Tersedia': return 'success';
-      case 'Disewa': return 'warning';
-      case 'Perbaikan': return 'danger';
-      default: return 'secondary';
-    }
   };
 
   return (

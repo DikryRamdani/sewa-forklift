@@ -1,129 +1,64 @@
 import React from 'react';
 
 /**
- * Footer layout component.
- *
- * @param {Object} props
- * @param {Function} props.setCurrentPage - Function to set active page ID
+ * Footer layout component from Stitch Template
  */
-export default function Footer({ setCurrentPage }) {
+export default function Footer() {
   return (
-    <footer style={{
-      backgroundColor: '#f9fafb',
-      borderTop: '1px solid #e5e7eb',
-      color: '#4b5563',
-      fontFamily: 'var(--sans)',
-      fontSize: '14px',
-      padding: '48px 20px 24px',
-      marginTop: 'auto'
-    }}>
-      <div style={{
-        maxWidth: '1000px',
-        margin: '0 auto',
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-        gap: '32px',
-        textAlign: 'left'
-      }}>
-        {/* Company Column */}
-        <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
-            <span style={{
-              backgroundColor: '#f97316',
-              color: '#ffffff',
-              fontWeight: '800',
-              fontSize: '16px',
-              width: '32px',
-              height: '32px',
-              borderRadius: '6px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center'
-            }}>
-              FP
-            </span>
-            <span style={{ fontWeight: '700', fontSize: '15px', color: '#111827' }}>
-              FORKLIFT PRATAMA
-            </span>
+    <footer className="bg-[#070d1e] text-slate-400 border-t border-[#132042] w-full mt-auto">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10 text-xs">
+          {/* Col 1: Brand Info */}
+          <div className="md:col-span-2 space-y-4">
+            <div className="flex items-center gap-3">
+              <img
+                alt="SewaForklift Logo"
+                className="h-9 w-auto object-contain rounded"
+                src="https://lh3.googleusercontent.com/aida/AEtjO1WruDBx3B-OYCikInvG3lLNwEHXwB31ipW60oAUYZ2lVl1Otu37GxJxY6PqHsMq8RW-2Yfkmfx2j1-qJ1fEdMXvdWOKSG5mPPXHmX7vqXz9O1aXsS_O8CGZGYJ12hflxbtXsGkGR3sSqLqpiRj1yCNZi0bcA9a8hxl8M_b2cMDEfPCi7pi6XBqWzXshATBqLKxl0NpU-R3kz-d-duiWvwxz19I7mnNFMjQB9Q-5H__KaWPJ3IQrKkLrrWY"
+              />
+              <span className="font-display font-bold text-lg text-white">
+                Sewa<span className="text-[#f97316]">Forklift</span>
+              </span>
+            </div>
+            <p className="text-slate-400 max-w-sm leading-relaxed">
+              Penyedia rental unit forklift listrik, diesel, stacker, dan peralatan material handling bersertifikasi Depnaker dengan jaminan uptime 99.4% untuk sektor industri &amp; logistik.
+            </p>
+            <div className="text-slate-500">
+              Depo &amp; Bengkel Induk: Kawasan Industri Jababeka II, Cikarang, Jawa Barat.
+            </div>
           </div>
-          <p style={{ lineHeight: '1.6', color: '#6b7280', fontSize: '13.5px' }}>
-            Mitra sewa forklift terpercaya di Indonesia. Menyediakan unit forklift prima dengan kapasitas 3 s.d 15 Ton untuk area Jabodetabek, Karawang, dan sekitarnya.
-          </p>
+
+          {/* Col 2: Navigasi Cepat */}
+          <div>
+            <h4 className="font-display text-white font-bold text-sm uppercase tracking-wider mb-4">Navigasi</h4>
+            <ul className="space-y-2.5">
+              <li><a className="hover:text-[#f97316] transition-colors" href="#">Home</a></li>
+              <li><a className="hover:text-[#f97316] transition-colors" href="#product">Product</a></li>
+              <li><a className="hover:text-[#f97316] transition-colors" href="#services">Our Services</a></li>
+              <li><a className="hover:text-[#f97316] transition-colors" href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          {/* Col 3: Layanan Hub */}
+          <div>
+            <h4 className="font-display text-white font-bold text-sm uppercase tracking-wider mb-4">Hub Layanan</h4>
+            <ul className="space-y-2.5 text-slate-400">
+              <li>• Cikarang - Karawang</li>
+              <li>• Jakarta - Tangerang - Banten</li>
+              <li>• Surabaya - Gresik - Pasuruan</li>
+              <li>• Medan &amp; Pelabuhan Belawan</li>
+            </ul>
+          </div>
         </div>
 
-        {/* Quick Links Column */}
-        <div>
-          <h4 style={{ color: '#111827', fontWeight: '600', margin: '0 0 16px 0', fontSize: '15px' }}>
-            Navigasi Cepat
-          </h4>
-          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
-            {['home', 'product', 'service', 'contact'].map((page) => {
-              const label = {
-                home: 'Beranda Utama',
-                product: 'Katalog Forklift',
-                service: 'Paket & Layanan',
-                contact: 'Hubungi Kontak'
-              }[page];
-              return (
-                <li key={page}>
-                  <button
-                    type="button"
-                    onClick={() => setCurrentPage(page)}
-                    style={{
-                      background: 'none',
-                      border: 'none',
-                      padding: 0,
-                      color: '#6b7280',
-                      cursor: 'pointer',
-                      fontSize: '13.5px',
-                      textDecoration: 'none'
-                    }}
-                    onMouseOver={(e) => e.target.style.color = '#f97316'}
-                    onMouseOut={(e) => e.target.style.color = '#6b7280'}
-                  >
-                    {label}
-                  </button>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-
-        {/* Contact Info Column */}
-        <div>
-          <h4 style={{ color: '#111827', fontWeight: '600', margin: '0 0 16px 0', fontSize: '15px' }}>
-            Kantor Operasional
-          </h4>
-          <p style={{ margin: '0 0 8px 0', fontSize: '13.5px', color: '#6b7280', lineHeight: '1.5' }}>
-            <strong>Cikarang:</strong> Kawasan Industri Jababeka II, Cikarang Selatan, Bekasi 17530
-          </p>
-          <p style={{ margin: '0 0 8px 0', fontSize: '13.5px', color: '#6b7280', lineHeight: '1.5' }}>
-            <strong>Karawang:</strong> Jl. Raya KIIC Blok B, Karawang Barat 41361
-          </p>
-          <p style={{ margin: 0, fontSize: '13.5px', color: '#6b7280', lineHeight: '1.5' }}>
-            <strong>Call Center:</strong> 0812-9876-5432
-          </p>
-        </div>
-      </div>
-
-      {/* Footer Bottom copyright */}
-      <div style={{
-        maxWidth: '1000px',
-        margin: '40px auto 0',
-        paddingTop: '20px',
-        borderTop: '1px solid #e5e7eb',
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        flexWrap: 'wrap',
-        gap: '12px',
-        fontSize: '12.5px',
-        color: '#9ca3af'
-      }}>
-        <span>© {new Date().getFullYear()} Forklift Pratama. All rights reserved.</span>
-        <div style={{ display: 'flex', gap: '16px' }}>
-          <span>Syarat & Ketentuan</span>
-          <span>Kebijakan Privasi</span>
+        <div className="pt-8 border-t border-[#132042] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+          <div>
+            © 2025 PT Sewa Forklift Indonesia. Hak cipta dilindungi undang-undang.
+          </div>
+          <div className="flex items-center gap-6">
+            <span>ISO 9001:2015 Certified</span>
+            <span>SILO Depnaker Legalitas</span>
+          </div>
         </div>
       </div>
     </footer>

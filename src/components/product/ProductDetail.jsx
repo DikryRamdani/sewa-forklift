@@ -1,5 +1,4 @@
 import React from 'react';
-import Badge from '../ui/Badge';
 import Button from '../ui/Button';
 
 /**
@@ -99,11 +98,6 @@ export default function ProductDetail({ product, onClose, onBook }) {
               <circle cx="32" cy="75" r="11" fill="#1f2937" />
               <circle cx="66" cy="75" r="11" fill="#1f2937" />
             </svg>
-          </div>
-          <div style={{ marginTop: '16px', display: 'flex', gap: '8px' }}>
-            <Badge variant={status === 'Tersedia' ? 'success' : 'warning'}>{status}</Badge>
-            <Badge variant="secondary">Original Unit</Badge>
-            <Badge variant="outline">Operator SIO Ready</Badge>
           </div>
         </div>
 
